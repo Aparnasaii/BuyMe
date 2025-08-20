@@ -25,7 +25,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Configure CORS to allow credentials
 app.use(cors({
-    origin: 'http://127.0.0.1:5500',
+    origin: 'https://buyme-frontend-defr.onrender.com', // updated frontend URL
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
@@ -56,10 +56,12 @@ app.use((req, res, next) => {
 app.use('/api/auth', authRoutes);
 app.use('/users', userRoutes); 
 app.use('/items', itemRoutes);
-app.use('/pi/auctions', auctionRoutes);
+app.use('/api/auctions', auctionRoutes); // fixed typo
 app.use('/api/bids', bidRoutes);
 app.use('/api/queries', queryRoutes);
 
-app.listen(5000, () => { 
-    console.log('Server running on http://localhost:5000'); 
-}); 
+// Use Render environment port or default 5000
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => { 
+    console.log(`Server running on port ${PORT}`); 
+});

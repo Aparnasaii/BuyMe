@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seller Dashboard | BuyMe</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #333;
+    }
+
+    header {
+      background-color: black;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    .container {
+      padding: 2rem;
+    }
+
+    .dashboard-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    
+
+    /* CTA Button */
+    .cta-btn {
+      position: relative;
+      margin-top: 1rem;
+      padding: 0.6rem 1.5rem;
+      font-size: 1rem;
+      background-color: black;
+      color: yellow;
+      cursor: pointer;
+      border: none;
+      overflow: hidden;
+      z-index: 1;
+      border-radius: 8px;
+      transition: color 0.3s ease;
+    }
+
+    .cta-btn::before {
+      content: "";
+      position: absolute;
+      background-color: yellow;
+      width: 0%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: width 0.4s ease;
+    }
+
+    .cta-btn:hover::before {
+      width: 100%;
+    }
+
+    .cta-btn:hover {
+      color: black;
+    }
+
+
+    .logout {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .logout:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>BuyMe - Seller Dashboard</h1>
+  <a href="login.html" class="logout">Logout</a>
+</header>
+
+<div class="container">
+
+  <h2 style="color: white;">Welcome, Seller</h2>
+
+  <div class="dashboard-cards">
+
+    <div class="card" style=" 
+      background-color: yellow;">
+      <h3>🛍️ My Listings</h3>
+      <p>View, edit or delete your current shoe listings.</p>
+      <a href="shoelist.html" class="cta-btn">Manage Listings</a>
+    </div>
+
+    <div class="card" style="background-color: #eab308;">
+      <h3>➕ Add New Shoe</h3>
+      <p>Post a new item for auction.</p>
+      <a href="item.html" class="cla-btn">Add Item</a>
+    </div>
+
+    <div class="card" style="background-color: yellow;">
+      <h3>📈 Recent Bids</h3>
+      <p>Track recent bids on your items.</p>
+      <a href="viewbids.html" class="cla-btn">View Bids</a>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
